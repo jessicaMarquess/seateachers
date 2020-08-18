@@ -1,6 +1,6 @@
 module.exports = {
     
-    age: function (timestamp){
+    age(timestamp){
         const today = new Date();
         const birthDate = new Date(timestamp);
 
@@ -12,13 +12,13 @@ module.exports = {
         }
         return age;
     },
-    graduation: function (degree) {
+    graduation(degree) {
         if (degree === 'medio') return 'Ensino Médio Completo';
         if (degree === 'superior') return 'Ensino Superior Completo';
         if (degree === 'mestrado') return 'Mestrado';
         if (degree === 'doutorado') return 'Doutorado';
     },
-    date: function(timestamp){
+    date(timestamp){
         const date = new Date(timestamp);
 
         const year = date.getUTCFullYear();
@@ -30,10 +30,11 @@ module.exports = {
             month,
             year,
             iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`
+            birthDay: `${day}/${month}`, 
+            format: `${day}/${month}/${year}`
         };
     },
-    grade: function(grade){
+    tip(grade){
         if(grade === '3EF') return '3º Série';
         if(grade === '4EF') return '4º Série';
         if(grade === '5EF') return '5º Série';
